@@ -10,8 +10,8 @@ describe('Message', () => {
     expect(wrapper.text()).toBe(msg)
   })
 
-  it('renders Hello! if not passed a prop', () => {
-    const defaultMessage = 'Hello!'
+  it('renders default message if not passed a prop', () => {
+    const defaultMessage = 'default message'
     const wrapper = shallow(Message, {context: {}})
     expect(wrapper.text()).toBe(defaultMessage)
   })

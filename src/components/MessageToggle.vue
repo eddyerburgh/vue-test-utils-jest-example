@@ -17,7 +17,7 @@
     }),
     methods: {
       toggleMessage () {
-        this.msg = this.msg === 'new message' ? 'toggled message' : 'new message'
+        this.msg = this.msg === 'message' ? 'toggled message' : 'message'
       }
     },
     components: {

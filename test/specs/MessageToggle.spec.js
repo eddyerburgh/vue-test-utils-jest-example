@@ -8,7 +8,7 @@ describe('MessageToggle.vue', () => {
     const button = wrapper.find('#toggle-message')
     button.trigger('click')
     const MessageComponent = wrapper.find(Message)
-    expect(MessageComponent.hasProp('msg', 'new message')).toBe(true)
+    expect(MessageComponent.hasProp('msg', 'message')).toBe(true)
     button.trigger('click')
     expect(MessageComponent.hasProp('msg', 'toggled message')).toBe(true)
   })
