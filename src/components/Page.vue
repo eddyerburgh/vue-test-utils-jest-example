@@ -1,27 +1,16 @@
 <template>
-    <div class="foo">
-        <message :msg="msg"></message>
-        <button id="toggle-message" @click="toggleMessage">
-            Change message
-        </button>
+    <div>
+        <message-toggle />
     </div>
 </template>
 
 <script>
-    import Message from './Message'
+    import MessageToggle from './MessageToggle'
 
     export default {
-      name: 'button',
-      data: () => ({
-        msg: null
-      }),
-      methods: {
-        toggleMessage () {
-          this.msg = this.msg === 'new message' ? 'toggled message' : 'new message'
-        }
-      },
+      name: 'page',
       components: {
-        Message
+        MessageToggle
       }
     }
 </script>

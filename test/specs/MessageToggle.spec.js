@@ -1,10 +1,10 @@
 import {shallow} from 'vue-test-utils'
-import Page from 'src/components/Page.vue'
+import MessageToggle from 'src/components/MessageToggle.vue'
 import Message from 'src/components/Message'
 
-describe('Page.vue', () => {
+describe('MessageToggle.vue', () => {
   it('toggles msg passed to Message when button is clicked', () => {
-    const wrapper = shallow(Page)
+    const wrapper = shallow(MessageToggle)
     const button = wrapper.find('#toggle-message')
     button.trigger('click')
     const MessageComponent = wrapper.find(Message)
