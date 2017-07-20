@@ -1,20 +1,25 @@
 <template>
     <div class="foo">
-        <h1>{{ msg }}</h1>
+        <message :msg="msg"></message>
         <button id="change-message" @click="changeMessage">Change message</button>
     </div>
 </template>
 
 <script>
+    import Message from './Message'
+
     export default {
       name: 'button',
       data: () => ({
-        msg: 'Welcome to Your Vue.js App'
+        msg: null
       }),
       methods: {
         changeMessage () {
           this.msg = 'new message'
         }
+      },
+      components: {
+        Message
       }
     }
 </script>

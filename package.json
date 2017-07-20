@@ -9,6 +9,7 @@
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src test",
+    "lint:fix": "npm run lint --fix",
     "unit": "jest"
   },
   "dependencies": {
@@ -73,10 +74,12 @@
   ],
   "jest": {
     "moduleNameMapper": {
-      "src/components/([^\\.]*)$": "<rootDir>/src/components/$1.vue",
+      "src/components/([^\\.]*).vue$": "<rootDir>/src/components/$1.vue",
+      "src/components/([^\\.]*)$": "<rootDir>/src/components/$1.js",
       "^vue$": "vue/dist/vue.common.js",
-      "src/([^\\.]*)$": "<rootDir>/src/$1.vue",
-      "(.*)/(.*)$": "$1/$2.vue"
+      "src/([^\\.]*)$": "<rootDir>/src/$1.js",
+      "src/([^\\.]*).vue$": "<rootDir>/src/$1.vue",
+      "(.*)/(.*).vue$": "$1/$2.vue"
     },
     "moduleFileExtensions": [
       "js",

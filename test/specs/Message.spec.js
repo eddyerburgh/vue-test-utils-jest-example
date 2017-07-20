@@ -1,12 +1,18 @@
 import {shallow} from 'vue-test-utils'
 import Message from 'src/components/Message'
 
-describe('Bar.vue', () => {
-  it('changes h1 text when button is clicked', () => {
-    const expectedMessage = 'new message'
-    const wrapper = shallow(Message)
-    wrapper.find('#change-message').trigger('click')
+describe('Message', () => {
+  it('renders props.msg when passed', () => {
+    const msg = 'new message'
+    const wrapper = shallow(Message, {
+      context: { props: { msg } }
+    })
+    expect(wrapper.text()).toBe(msg)
+  })
 
-    expect(wrapper.find('h1').text()).toBe(expectedMessage)
+  it('renders Hello! if not passed a prop', () => {
+    const defaultMessage = 'Hello!'
+    const wrapper = shallow(Message, {context: {}})
+    expect(wrapper.text()).toBe(defaultMessage)
   })
 })
