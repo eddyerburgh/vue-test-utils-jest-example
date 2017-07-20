@@ -1,6 +1,6 @@
 # vue-test-utils-jest-example
 
-> A Vue.js project
+> An example project using vue-test-utils and jest to run unit tests
 
 ## Build Setup
 
