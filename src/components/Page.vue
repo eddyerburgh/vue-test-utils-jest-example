@@ -1,7 +1,9 @@
 <template>
     <div class="foo">
         <message :msg="msg"></message>
-        <button id="change-message" @click="changeMessage">Change message</button>
+        <button id="toggle-message" @click="toggleMessage">
+            Change message
+        </button>
     </div>
 </template>
 
@@ -14,8 +16,8 @@
         msg: null
       }),
       methods: {
-        changeMessage () {
-          this.msg = 'new message'
+        toggleMessage () {
+          this.msg = this.msg === 'new message' ? 'toggled message' : 'new message'
         }
       },
       components: {
