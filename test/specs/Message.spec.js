@@ -1,4 +1,4 @@
-import {shallow} from 'vue-test-utils'
+import { shallow } from 'vue-test-utils'
 import Message from 'src/components/Message'
 
 describe('Message', () => {

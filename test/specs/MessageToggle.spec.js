@@ -1,4 +1,4 @@
-import {shallow} from 'vue-test-utils'
+import { shallow } from 'vue-test-utils'
 import MessageToggle from 'src/components/MessageToggle.vue'
 import Message from 'src/components/Message'
 
