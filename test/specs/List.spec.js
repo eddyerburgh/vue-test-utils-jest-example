@@ -1,5 +1,5 @@
 import { shallow } from 'vue-test-utils'
-import List from 'src/components/List.vue'
+import List from '@/components/List.vue'
 
 describe('List.vue', () => {
   it('renders li for each item in props.items', () => {

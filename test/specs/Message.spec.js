@@ -1,5 +1,5 @@
 import { shallow } from 'vue-test-utils'
-import Message from 'src/components/Message'
+import Message from '@/components/Message'
 
 describe('Message', () => {
   it('renders props.msg when passed', () => {
