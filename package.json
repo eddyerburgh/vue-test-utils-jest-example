@@ -8,12 +8,12 @@
     "start": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src test",
-    "lint:fix": "npm run lint --fix",
+    "lint:fix": "npm run lint -- --fix",
     "test": "npm run lint && npm run unit",
     "unit": "jest"
   },
   "dependencies": {
-    "vue": "^2.3.3",
+    "vue": "2.4.2",
     "vue-router": "^2.6.0"
   },
   "devDependencies": {
@@ -25,7 +25,6 @@
     "babel-plugin-module-resolver": "^2.7.1",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.3.2",
-    "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "chalk": "^2.0.1",
@@ -47,7 +46,8 @@
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.3",
     "jest": "^20.0.4",
-    "jest-vue": "^0.1.1",
+    "jest-serializer-vue": "^0.2.0",
+    "jest-vue": "^0.5.3",
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
@@ -55,9 +55,10 @@
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "url-loader": "^0.5.8",
-    "vue-loader": "^12.1.0",
+    "vue-loader": "^13.0.5",
+    "vue-server-renderer": "2.4.2",
     "vue-style-loader": "^3.0.1",
-    "vue-template-compiler": "^2.3.3",
+    "vue-template-compiler": "2.4.2",
     "vue-test-utils": "git+https://github.com/vuejs/vue-test-utils.git",
     "webpack": "^2.6.1",
     "webpack-bundle-analyzer": "^2.2.1",
@@ -82,6 +83,9 @@
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue"
-    }
+    },
+    "snapshotSerializers": [
+      "<rootDir>/node_modules/jest-serializer-vue"
+    ]
   }
 }
