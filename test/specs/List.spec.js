@@ -1,6 +1,6 @@
 import {
-  shallow
-} from 'vue-test-utils'
+  shallowMount
+} from '@vue/test-utils'
 import List from '@/components/List.vue'
 import {
   createRenderer
@@ -9,7 +9,7 @@ import {
 describe('List.vue', () => {
   it('renders li for each item in props.items', () => {
     const items = ['', '']
-    const wrapper = shallow(List, {
+    const wrapper = shallowMount(List, {
       propsData: { items }
     })
     expect(wrapper.findAll('li')).toHaveLength(items.length)
@@ -18,7 +18,7 @@ describe('List.vue', () => {
   it('matches snapshot', () => {
     const items = ['item 1', 'item 2']
     const renderer = createRenderer()
-    const wrapper = shallow(List, {
+    const wrapper = shallowMount(List, {
       propsData: { items }
     })
     renderer.renderToString(wrapper.vm, (err, str) => {
